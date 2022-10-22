@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('' , views.LandingPage, name="LandingPage"),
-    path('names/' , views.names, name="names"),
-    path('list/<str:pk>/', views.list, name="list"),
+    path('names/<str:pk>/' , views.namePro, name="namePro"),
+    path('list', views.list, name="list"),
+    
 ]
