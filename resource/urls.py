@@ -1,4 +1,3 @@
-from unicodedata import name
 from xml.etree.ElementInclude import include
 from django.urls import path
 from . import views
@@ -6,6 +5,6 @@ from . import views
 urlpatterns = [
     path('' , views.LandingPage, name="LandingPage"),
     path('names/<str:pk>/' , views.namePro, name="namePro"),
-    path('list', views.list, name="list"),
+    path('name/', views.naming, name="naming"),
     
 ]

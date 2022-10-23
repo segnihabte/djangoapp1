@@ -1,5 +1,6 @@
 from multiprocessing import context
 from django.shortcuts import render
+from .models import Username
 from django.http import HttpResponse
 
 namesList = [
@@ -23,9 +24,14 @@ namesList = [
     },
 ]
 
-def list(request, pk):
-    firstnames = "abebe"
-    return HttpResponse(firstnames)
+
+
+def naming(request):
+    names = Username.objects.all()
+    context={'usernames': names}
+    return render(request, 'namesList.html', context)
+
+
 
 def LandingPage(request):
     return render(request, 'LandingPage.html')
@@ -35,4 +41,4 @@ def namePro(request, pk):
     for i in namesList:
         if i["id"] == pk:
             namesObj = i
-    return render(request, 'homepage.html', {'project':namesObj})
+    return render(request, 'LandingPage.html', {'project':namesObj})

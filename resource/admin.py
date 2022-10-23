@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import Username,jobDiscription,personDiscription
 
-# Register your models here.
+admin.site.register(Username)
+admin.site.register(personDiscription)
+admin.site.register(jobDiscription)
+
+
